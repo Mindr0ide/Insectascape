@@ -6,13 +6,8 @@ namespace Scenes.Scripts
     public class PlayerMovement : MonoBehaviour
     {
         [Header("Movement Settings")]
-        [SerializeField] private float moveSpeed = 5f; // Serialized for easy tweaking in the Inspector
-        [SerializeField] private float jumpForce = 7.5f; // Increased for better jump feel
-        //[SerializeField] private float groundCheckRadius = 0.2f; // Serialized for easy tweaking
-        //[SerializeField] private LayerMask groundLayer; // LayerMask for ground detection
-
-        [Header("Ground Detection")]
-        //[SerializeField] private Transform groundCheck; // Transform for ground check position
+        [SerializeField] private float moveSpeed = 5f;
+        [SerializeField] private float jumpForce = 7.5f;
 
         private Rigidbody2D rb;
         private bool isGrounded;
@@ -28,9 +23,7 @@ namespace Scenes.Scripts
             moveInput = Input.GetAxis("Horizontal");
             Move();
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            {
                 Jump();
-            }
         }
         
         private void Move()
@@ -43,11 +36,6 @@ namespace Scenes.Scripts
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
         }
-
-        /*private void CheckGround()
-        {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        }*/
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
