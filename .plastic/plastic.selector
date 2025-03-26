@@ -1,4 +1,0 @@
-repository "Insectascape/Insectascape@20067440796981@cloud"
-  path "/"
-    br "/main"
-    co "/main"
