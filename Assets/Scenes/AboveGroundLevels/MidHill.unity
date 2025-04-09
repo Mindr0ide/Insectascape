@@ -3029,9 +3029,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -8.9, y: 4.5, z: 0}
-      leftTangent: {x: -0.25978088, y: -3.1173735, z: 0}
-      rightTangent: {x: 0.9999995, y: 12, z: 0}
+    - position: {x: -9.900002, y: 6.5000014, z: 0}
+      leftTangent: {x: -0.25978088, y: -3.1174119, z: 0}
+      rightTangent: {x: 1.0000076, y: 12.000128, z: 0}
       mode: 1
       height: 1
       spriteIndex: 0
@@ -6956,6 +6956,7 @@ GameObject:
   - component: {fileID: 1329269657}
   - component: {fileID: 1329269656}
   - component: {fileID: 1329269655}
+  - component: {fileID: 1329269658}
   m_Layer: 0
   m_Name: LevelTransitionLeft
   m_TagString: Untagged
@@ -7079,6 +7080,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1329269658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329269654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bd687e06e594534a744c709a04b568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBuildIndex: 0
 --- !u!1 &1440110412
 GameObject:
   m_ObjectHideFlags: 0
