@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ground beetle_0: 6173028107271208818
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
