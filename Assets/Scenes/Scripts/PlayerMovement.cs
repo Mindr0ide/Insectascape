@@ -8,6 +8,7 @@ namespace Scenes.Scripts
         [Header("Movement Settings")]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float jumpForce = 3.5f;
+        [SerializeField] private float gravity = 1.0f;
 
         private Rigidbody2D rb;
         private bool isGrounded;
@@ -41,7 +42,7 @@ namespace Scenes.Scripts
         
         private void Move()
         {
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed, (float)(rb.linearVelocity.y - gravity));
         }
 
         private void Jump()
