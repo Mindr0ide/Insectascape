@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aafb2b1f7b07eac41aee57f8ebc19e13
+guid: 2b5e7790f2f77e947a120045e602ccd5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5678146864509079164
-    second: owl run(1)_0
+      213: 8135189148277931868
+    second: owl run_4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: owl run(1)_0
+      name: owl run_4_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 14
-        width: 233
-        height: 192
+        x: 16
+        y: 2
+        width: 295
+        height: 261
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4813076c28b2331b0800000000000000
-      internalID: -5678146864509079164
+      spriteID: c5ff7b3ad6ff5e070800000000000000
+      internalID: 8135189148277931868
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      owl run(1)_0: -5678146864509079164
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
