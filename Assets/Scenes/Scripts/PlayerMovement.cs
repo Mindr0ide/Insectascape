@@ -13,8 +13,8 @@ namespace Scenes.Scripts
         [SerializeField] private float lowJumpMultiplier = 2f;
 
         [Header("Coyote Time")] 
-        [SerializeField] private float coyoteTime = 0.2f; //How much time the player can hang in the air before jumping
-        private float coyoteCounter; //How much time passed since the player ran off the edge
+        [SerializeField] private float coyoteTime = 0.2f;   //How much time the player can hang in the air before jumping
+        private float coyoteCounter;                        //How much time passed since the player ran off the edge
 
         [Header("Dash Settings")] 
         [SerializeField] private float dashForce = 36f;

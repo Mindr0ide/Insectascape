@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 7242398942267688465}
   - component: {fileID: 8889498175204325163}
   - component: {fileID: 1271459159501429301}
+  - component: {fileID: 7438066958634249122}
   m_Layer: 0
   m_Name: PlayerTemp
   m_TagString: Untagged
@@ -307,6 +308,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 7.5
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  coyoteTime: 0.2
+  dashForce: 36
+  dashDuration: 0.3
+  dashCooldown: 1.5
+  extraJumps: 1
 --- !u!95 &1271459159501429301
 Animator:
   serializedVersion: 7
@@ -329,3 +337,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7438066958634249122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961287350072108655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc7cdd3956f7b343bf6c4cf5ceb2194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
