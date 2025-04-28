@@ -1,3 +1,5 @@
+using System.Collections;
+using Scenes.Scripts;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -25,13 +27,34 @@ public class Health : MonoBehaviour
         {
             //dead
             anim.SetTrigger("die");
+            // CALL Respawn here
+            StartCoroutine(RespawnAfterDelay()); 
+            //FindObjectOfType<PlayerRespawn>().Respawn();
         }
     }
 
     private void Update()
     {
-      if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E))
             TakeDamage(1);
     }
-    
+
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, maxHealth);
+    }
+
+    public void Respawn()
+    {
+        AddHealth(maxHealth);
+        anim.ResetTrigger("die");
+        anim.Play("Idle");
+    }
+    private IEnumerator RespawnAfterDelay()
+    {
+        GetComponent<PlayerMovement>().enabled = false;
+        yield return new WaitForSeconds(2.5f);
+        FindObjectOfType<PlayerRespawn>().Respawn();
+        GetComponent<PlayerMovement>().enabled = true;
+    }
 }
