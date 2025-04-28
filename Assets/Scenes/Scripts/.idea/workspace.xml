@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e75699b8-357c-4aa1-b55d-a2703a7be07c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../MidHill Edgar.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../MidHill Edgar.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MobBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MobBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Mob/Horned Beetle walk 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Mob/Horned Beetle walk 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Mob/Horned Beetle walk 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Mob/Horned Beetle walk 2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/Mob/Horned Beetle walk 3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Mob/Horned Beetle walk 3.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +20,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/MobBehavior.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Health/Health.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MobBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -62,6 +63,7 @@
       <workItem from="1744592855294" duration="2516000" />
       <workItem from="1744841903980" duration="1848000" />
       <workItem from="1745272097873" duration="3804000" />
+      <workItem from="1745876251162" duration="1794000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3989e9a75a28aac4e8ac46a1ebd87dc1
+guid: a45474723faea9443a34aca01cad8d6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6263640173949722247
-    second: Horned Beetle walk 3_0
+      213: 2567833003177026207
+    second: Horned_Beetle_Hurt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Horned Beetle walk 3_0
+      name: Horned_Beetle_Hurt_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 25
         y: 0
-        width: 249
-        height: 138
+        width: 233
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9716cdea2741319a0800000000000000
-      internalID: -6263640173949722247
+      spriteID: f9224ece286c2a320800000000000000
+      internalID: 2567833003177026207
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Horned Beetle walk 3_0: -6263640173949722247
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
