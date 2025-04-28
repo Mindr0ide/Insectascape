@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Horned Beetle walk 3_0: -6263640173949722247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
