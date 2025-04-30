@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Horned_Beetle_Death_0: -4616196779574394898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

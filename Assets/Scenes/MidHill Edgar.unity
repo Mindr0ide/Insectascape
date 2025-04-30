@@ -253,7 +253,7 @@ MonoBehaviour:
   changeDirectionInterval: 2
   damage: 1
   attackCooldown: 1
-  knockbackForce: 20
+  knockbackForce: 30
   detectionRadius: 8
   player: {fileID: 1926946657}
   groundCheckDistance: 2
@@ -265,7 +265,8 @@ MonoBehaviour:
   wallCheckDistance: 1
   wallLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  maxHealth: 2
 --- !u!95 &8968082
 Animator:
   serializedVersion: 7
@@ -9502,6 +9503,34 @@ PrefabInstance:
     - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: gravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+      propertyPath: dashForce
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+      propertyPath: moveSpeed
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+      propertyPath: coyoteTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+      propertyPath: extraJumps
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+      propertyPath: fallMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889498175204325163, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+      propertyPath: lowJumpMultiplier
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

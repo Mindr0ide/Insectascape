@@ -149,7 +149,7 @@ public class MobBehavior : MonoBehaviour
                 {
                     Vector2 rawDirection = (playerRb.position - rb.position).normalized;
                     Vector2 knockbackDirection = new Vector2(rawDirection.x, 0.5f).normalized;
-                    playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                    playerRb.AddForce(Vector2.up * knockbackForce, ForceMode2D.Impulse);
                 }
 
                 lastAttackTime = Time.time;
