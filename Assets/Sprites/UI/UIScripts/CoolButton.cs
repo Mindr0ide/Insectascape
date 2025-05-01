@@ -6,8 +6,6 @@ using TMPro;
 public class MenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("UI References")]
-    public Sprite normalBackground;
-    public Sprite selectedBackground;
     private Image buttonImage;
     public TextMeshProUGUI buttonText;
     [TextArea] public string buttonLabel;
@@ -18,6 +16,8 @@ public class MenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPoin
 
     public Color normalFontColor;
     public Color selectedFontColor;
+    public Color NormalBttnColor;
+    public Color SelectedBttnColor;
     
     private Button button;
     private bool isSelected = false;
@@ -28,8 +28,7 @@ public class MenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPoin
         buttonImage = GetComponent<Image>();
 
         buttonText.text = buttonLabel;
-        normalBackground = buttonImage.sprite;
-        AdjustButtonWidth();
+        // AdjustButtonWidth();
     }
     
     void Start()
@@ -37,16 +36,16 @@ public class MenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPoin
         button.onClick.AddListener(OnButtonClick);
         // Initialize with normal state
         buttonText.fontSize = normalFontSize;
-        buttonImage.sprite = normalBackground;
+        buttonImage.color = NormalBttnColor;
     }
     
-    void AdjustButtonWidth()
-    {
-        float textWidth = buttonText.preferredWidth;
-        float padding = 40f;
-        RectTransform rt = GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(textWidth + padding, rt.sizeDelta.y);
-    }
+    // void AdjustButtonWidth()
+    // {
+    //     float textWidth = buttonText.preferredWidth;
+    //     float padding = 40f;
+    //     RectTransform rt = GetComponent<RectTransform>();
+    //     rt.sizeDelta = new Vector2(textWidth + padding, rt.sizeDelta.y);
+    // }
     
     // These are called automatically by the EventSystem
     public void OnSelect(BaseEventData eventData)
@@ -54,10 +53,7 @@ public class MenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPoin
         isSelected = true;
         buttonText.fontSize = selectedFontSize;
         buttonText.color = selectedFontColor;
-        if (buttonImage != null && selectedBackground != null)
-        {
-            buttonImage.sprite = selectedBackground;
-        }
+        buttonImage.color = SelectedBttnColor;
         // transform.localScale = new Vector2(2f, 2f);
         Debug.Log($"Button {buttonLabel} selected");
     }
@@ -67,10 +63,7 @@ public class MenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPoin
         isSelected = false;
         buttonText.fontSize = normalFontSize;
         buttonText.color = normalFontColor;
-        if (buttonImage != null && normalBackground != null)
-        {
-            buttonImage.sprite = normalBackground;
-        }
+        buttonImage.color = NormalBttnColor;
         // transform.localScale = new Vector2(1f, 1f);
         Debug.Log($"Button {buttonLabel} deselected");
     }
