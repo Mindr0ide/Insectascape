@@ -1,11 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject settingsMenuUI;
+    public Slider musicVol, SFXVol;
+    public AudioMixer mainAudioMixer;
 
     void Update()
     {
@@ -59,5 +65,15 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log ("Quitting game...");
         Application.Quit();
+    }
+
+    public void SetMusicVolume (float volume)
+    {
+        mainAudioMixer.SetFloat("MusicVol", musicVol.value);
+    }
+
+    public void SetSFXVolume (float volume)
+    {
+        mainAudioMixer.SetFloat("SFXVol", SFXVol.value);
     }
 }
