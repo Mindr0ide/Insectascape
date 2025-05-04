@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BouncePad : MonoBehaviour
 {
-    private float bounce = 15f;
+    public float bounce = 15f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
