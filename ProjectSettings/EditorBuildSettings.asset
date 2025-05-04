@@ -9,17 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/AboveGroundLevels/MidHill.unity
-    guid: 92ab40caaff5d436498f028ffb8045e5
+    path: Assets/Scenes/Menus/Menu.unity
+    guid: 5761848bb87d04d16a4fd78a815dcb57
   - enabled: 1
     path: Assets/Scenes/AboveGroundLevels/BridgeToHub.unity
     guid: da32f6d981c264d12b58c291348269ed
   - enabled: 1
-    path: Assets/Scenes/AboveGroundLevels/SafeHub.unity
-    guid: 28bf94a06477c4eeea212e5ef87d6fe5
+    path: Assets/Scenes/AboveGroundLevels/AfterBridge.unity
+    guid: 94759b177fead4025ab7fc2f92cba609
   - enabled: 1
-    path: Assets/Scenes/Menus/Menu.unity
-    guid: 5761848bb87d04d16a4fd78a815dcb57
+    path: Assets/Scenes/AboveGroundLevels/MidHill.unity
+    guid: 92ab40caaff5d436498f028ffb8045e5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
