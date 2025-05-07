@@ -13,25 +13,31 @@ namespace Scenes.Scripts
         [SerializeField] private float lowJumpMultiplier = 2f;
 
         [Header("Coyote Time")] 
-        [SerializeField] private float coyoteTime = 0.2f;   //How much time the player can hang in the air before jumping
-        private float coyoteCounter;                        //How much time passed since the player ran off the edge
+        [SerializeField] private float coyoteTime = 0.2f;
+        private float coyoteCounter;
 
         [Header("Dash Settings")] 
         [SerializeField] private float dashForce = 36f;
-
         [SerializeField] private float dashDuration = 0.3f;
         [SerializeField] private float dashCooldown = 1.5f;
 
         [Header("Multiple Jumps")]
         [SerializeField] private int extraJumps = 1;
-
         private int jumpCounter;
 
+        [Header("Melee Attack")]
+        [SerializeField] private float meleeRange = 1f;
+        [SerializeField] private Vector2 meleeBoxSize = new Vector2(1f, 1f);
+        [SerializeField] private Vector2 meleeOffset = new Vector2(1f, 0f);
+        [SerializeField] private int meleeDamage = 1;
+        [SerializeField] private float meleeCooldown = 0.5f;
+        [SerializeField] private LayerMask enemyLayer;
+        private bool canMeleeAttack = true;
+
         private Rigidbody2D rb;
+        private Animator anim;
         private bool isGrounded;
         private float moveInput;
-        private Animator anim;
-
         private bool isDashing = false;
         private bool canDash = true;
 
@@ -43,84 +49,118 @@ namespace Scenes.Scripts
 
         private void Update()
         {
-            // Disable controls while dashing
             if (isDashing) return;
             moveInput = Input.GetAxis("Horizontal");
 
-            // Flip the player to the left if he looks left and vice-versa
+            // Flip
             if (moveInput > 0f) transform.localScale = Vector3.one;
             else if (moveInput < 0f) transform.localScale = new Vector3(-1, 1, 1);
 
             Move();
-            
-            // Handle coyote time
-            if (isGrounded)
-            {
-                coyoteCounter = coyoteTime;
-                jumpCounter = extraJumps; // Reset extra jumps when grounded
-            }
-            else
-                coyoteCounter -= Time.deltaTime;
-            
+            HandleJumpAndCoyote();
+            HandleDash();
+            HandleGravity();
+            HandleAttack();
 
-            // Jump
-            if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0))
-            {
-                Jump();
-                if (!isGrounded) jumpCounter--;
-            }
-            // Dash
-            if (Input.GetKeyDown(KeyCode.LeftAlt) && canDash)
-                StartCoroutine(Dash());
-            // apply gravity modifiers
-            if (rb.linearVelocity.y < 0)
-                rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
-            else if (rb.linearVelocity.y > 0)
-                rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
-            
-
-            //Set animator parameters
             anim.SetBool("run", moveInput != 0);
             anim.SetBool("grounded", isGrounded);
         }
 
-        private void Move()
+        private void Move() => rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        private void HandleJumpAndCoyote()
         {
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, (float)(rb.linearVelocity.y));
+            if (isGrounded)
+            {
+                coyoteCounter = coyoteTime;
+                jumpCounter = extraJumps;
+            }
+            else coyoteCounter -= Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0))
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                anim.SetTrigger("jump");
+                isGrounded = false;
+                coyoteCounter = 0;
+                if (!isGrounded) jumpCounter--;
+            }
         }
 
-        private void Jump()
+        private void HandleDash()
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            anim.SetTrigger("jump");
-            isGrounded = false;
-            coyoteCounter = 0;
+            if (Input.GetKeyDown(KeyCode.LeftAlt) && canDash)
+                StartCoroutine(Dash());
         }
-
-
 
         private IEnumerator Dash()
         {
             canDash = false;
             isDashing = true;
-
             float originalGravity = rb.gravityScale;
             rb.gravityScale = 0f;
-
             rb.linearVelocity = new Vector2(transform.localScale.x * dashForce, 0f);
 
             yield return new WaitForSeconds(dashDuration);
-
             rb.gravityScale = originalGravity;
             isDashing = false;
-
             yield return new WaitForSeconds(dashCooldown);
             canDash = true;
         }
 
+        private void HandleGravity()
+        {
+            if (rb.linearVelocity.y < 0)
+                rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
+            else if (rb.linearVelocity.y > 0)
+                rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
+        }
+
+        private void HandleAttack()
+        {
+            if (Input.GetMouseButtonDown(0) && canMeleeAttack)
+                MeleeAttack();
+        }
+
+        private void MeleeAttack()
+        {
+            canMeleeAttack = false;
+            //anim.SetTrigger("attack");
+            //print("bigflop et oli");
+
+            // Determine box center based on facing
+            Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+            Vector2 boxCenter = (Vector2)transform.position + direction * meleeOffset.x + Vector2.up * meleeOffset.y;
+
+            // Detect enemies
+            Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, meleeBoxSize, 0f, enemyLayer);
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.TryGetComponent<MobBehavior>(out MobBehavior mob))
+                {
+                    //print("CA MARCHE LESGOOO");
+                    mob.TakeDamage(meleeDamage);
+                }
+            }
+
+            // Reset cooldown
+            Invoke(nameof(ResetMeleeAttack), meleeCooldown);
+        }
+
+        private void ResetMeleeAttack() => canMeleeAttack = true;
+
+        private void OnDrawGizmosSelected()
+        {
+            // Draw attack box
+            Gizmos.color = Color.red;
+            Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+            Vector2 boxCenter = (Vector2)transform.position + direction * meleeOffset.x + Vector2.up * meleeOffset.y;
+            Gizmos.DrawWireCube(boxCenter, meleeBoxSize);
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.tag == "Ground")
+            if (collision.gameObject.CompareTag("Ground"))
                 isGrounded = true;
         }
     }
