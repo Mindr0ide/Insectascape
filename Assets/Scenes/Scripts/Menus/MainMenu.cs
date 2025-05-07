@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         Debug.Log("Starting game...");
-        SceneManager.LoadScene("TrainingGrounds");
+        SceneManager.LoadScene("AfterBridge");
     }
 
     public void OpenSettings()
