@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
         {
             //player hurt
             anim.SetTrigger("hurt");
+            StartCoroutine(HurtDelay());
         }
         else
         {
@@ -35,8 +36,8 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-            TakeDamage(1);
+        //if(Input.GetKeyDown(KeyCode.E))
+        //    TakeDamage(1);
     }
 
     public void AddHealth(float _value)
@@ -52,9 +53,15 @@ public class Health : MonoBehaviour
     }
     private IEnumerator RespawnAfterDelay()
     {
-        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerMovement>().freeze();
         yield return new WaitForSeconds(2.5f);
         FindObjectOfType<PlayerRespawn>().Respawn();
-        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<PlayerMovement>().unfreeze();
+    }
+    private IEnumerator HurtDelay()
+    {
+        GetComponent<PlayerMovement>().freeze();
+        yield return new WaitForSeconds(1.25f);
+        GetComponent<PlayerMovement>().unfreeze();
     }
 }

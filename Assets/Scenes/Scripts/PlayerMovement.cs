@@ -40,6 +40,7 @@ namespace Scenes.Scripts
         private float moveInput;
         private bool isDashing = false;
         private bool canDash = true;
+        private bool canMove = true;
 
         private void Awake()
         {
@@ -49,18 +50,20 @@ namespace Scenes.Scripts
 
         private void Update()
         {
+            print(isDashing);
             if (isDashing) return;
-            moveInput = Input.GetAxis("Horizontal");
+            moveInput = (canMove) ? Input.GetAxis("Horizontal") : 0f;
 
             // Flip
             if (moveInput > 0f) transform.localScale = Vector3.one;
             else if (moveInput < 0f) transform.localScale = new Vector3(-1, 1, 1);
-
+            
             Move();
             HandleJumpAndCoyote();
             HandleDash();
-            HandleGravity();
             HandleAttack();
+            HandleGravity();
+            HandleAnim();
 
             anim.SetBool("run", moveInput != 0);
             anim.SetBool("grounded", isGrounded);
@@ -80,7 +83,7 @@ namespace Scenes.Scripts
             if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0))
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-                anim.SetTrigger("jump");
+                // anim.SetTrigger("jump");
                 isGrounded = false;
                 coyoteCounter = 0;
                 if (!isGrounded) jumpCounter--;
@@ -89,12 +92,28 @@ namespace Scenes.Scripts
 
         private void HandleDash()
         {
-            if (Input.GetKeyDown(KeyCode.LeftAlt) && canDash)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
                 StartCoroutine(Dash());
+        }
+
+        private void HandleAnim()
+        {
+            if (!isGrounded)
+            {
+                anim.SetBool("up", rb.linearVelocity.y > 0.1f);
+                anim.SetBool("down", rb.linearVelocity.y < -0.1f);
+            }
+            else
+            {
+                anim.SetBool("up", false);
+                anim.SetBool("down", false);
+            }
         }
 
         private IEnumerator Dash()
         {
+            //anim.SetBool("dash", true);
+            anim.SetTrigger("dash");
             canDash = false;
             isDashing = true;
             float originalGravity = rb.gravityScale;
@@ -106,6 +125,7 @@ namespace Scenes.Scripts
             isDashing = false;
             yield return new WaitForSeconds(dashCooldown);
             canDash = true;
+            //anim.SetBool("dash", false);
         }
 
         private void HandleGravity()
@@ -125,7 +145,7 @@ namespace Scenes.Scripts
         private void MeleeAttack()
         {
             canMeleeAttack = false;
-            //anim.SetTrigger("attack");
+            anim.SetTrigger("attack");
             //print("bigflop et oli");
 
             // Determine box center based on facing
@@ -140,6 +160,11 @@ namespace Scenes.Scripts
                 {
                     //print("CA MARCHE LESGOOO");
                     mob.TakeDamage(meleeDamage);
+                }
+                else if (hit.TryGetComponent<BouncePad>(out BouncePad pad))
+                {
+                    //print("CA MARCHE LESGOOO 2");
+                    pad.ActivateBounce();
                 }
             }
 
@@ -162,6 +187,16 @@ namespace Scenes.Scripts
         {
             if (collision.gameObject.CompareTag("Ground"))
                 isGrounded = true;
+        }
+
+        public void freeze()
+        {
+            canMove = false;
+        }
+
+        public void unfreeze()
+        {
+            canMove = true;
         }
     }
 }
