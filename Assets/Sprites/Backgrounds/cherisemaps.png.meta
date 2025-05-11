@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cherisemaps_0: 7949026258163312073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

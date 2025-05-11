@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DONTUSETHISWEDONTHAVEPERMS 1_0: 8578850705934119265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

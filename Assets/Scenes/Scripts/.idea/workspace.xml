@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e75699b8-357c-4aa1-b55d-a2703a7be07c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../MidHill Edgar.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../MidHill Edgar.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MobBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MobBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sprites/Mob/Horned_Beetle_Death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Mob/Horned_Beetle_Death.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sprites/Mob/Horned_Beetle_Hurt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/Mob/Horned_Beetle_Hurt.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerPlatformOneWay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerPlatformOneWay.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
