@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Owl_Death_0: 2792350549230838916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
