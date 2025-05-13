@@ -80,7 +80,7 @@ namespace Scenes.Scripts
             }
             else coyoteCounter -= Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0))
+            if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0) && canMove)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 // anim.SetTrigger("jump");
@@ -92,13 +92,17 @@ namespace Scenes.Scripts
 
         private void HandleDash()
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && canMove)
                 StartCoroutine(Dash());
         }
 
         private void HandleAnim()
         {
-            if (!isGrounded)
+            if (anim.GetBool("hurt"))
+            {
+                //anim.SetTrigger("hurt");
+            }
+            else if (!isGrounded)
             {
                 anim.SetBool("up", rb.linearVelocity.y > 0.1f);
                 anim.SetBool("down", rb.linearVelocity.y < -0.1f);
@@ -130,7 +134,7 @@ namespace Scenes.Scripts
 
         private void HandleGravity()
         {
-            if (rb.linearVelocity.y < 0)
+            if (rb.linearVelocity.y <= 0)
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
             else if (rb.linearVelocity.y > 0)
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
@@ -138,7 +142,7 @@ namespace Scenes.Scripts
 
         private void HandleAttack()
         {
-            if (Input.GetMouseButtonDown(0) && canMeleeAttack)
+            if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) && canMeleeAttack)
                 MeleeAttack();
         }
 
