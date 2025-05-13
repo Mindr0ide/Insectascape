@@ -9,11 +9,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("AfterBridge");
     }
 
-    public void OpenSettings()
-    {
-        Debug.Log("Opening settings...");
-        //TODO settings
-    }
+    //for open settings, see PauseMenu script
 
     public void QuitGame()
     {
