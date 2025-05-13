@@ -61,8 +61,8 @@ public class Health : MonoBehaviour
     }
     private IEnumerator HurtDelay()
     {
-        GetComponent<PlayerMovement>().freeze();
+        //GetComponent<PlayerMovement>().freeze();
         yield return new WaitForSeconds(1.25f);
-        GetComponent<PlayerMovement>().unfreeze();
+        //GetComponent<PlayerMovement>().unfreeze();
     }
 }

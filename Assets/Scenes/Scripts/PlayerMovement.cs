@@ -50,7 +50,7 @@ namespace Scenes.Scripts
 
         private void Update()
         {
-            print(isDashing);
+            //print(isDashing);
             if (isDashing) return;
             moveInput = (canMove) ? Input.GetAxis("Horizontal") : 0f;
 
@@ -63,7 +63,7 @@ namespace Scenes.Scripts
             HandleDash();
             HandleAttack();
             HandleGravity();
-            HandleAnim();
+            //HandleAnim();
 
             anim.SetBool("run", moveInput != 0);
             anim.SetBool("grounded", isGrounded);
@@ -83,7 +83,7 @@ namespace Scenes.Scripts
             if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0) && canMove)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-                // anim.SetTrigger("jump");
+                anim.SetTrigger("jump");
                 isGrounded = false;
                 coyoteCounter = 0;
                 if (!isGrounded) jumpCounter--;
@@ -96,23 +96,23 @@ namespace Scenes.Scripts
                 StartCoroutine(Dash());
         }
 
-        private void HandleAnim()
-        {
-            if (anim.GetBool("hurt"))
-            {
+//        private void HandleAnim()
+//        {
+//            if (anim.GetBool("hurt"))
+//            {
                 //anim.SetTrigger("hurt");
-            }
-            else if (!isGrounded)
-            {
-                anim.SetBool("up", rb.linearVelocity.y > 0.1f);
-                anim.SetBool("down", rb.linearVelocity.y < -0.1f);
-            }
-            else
-            {
-                anim.SetBool("up", false);
-                anim.SetBool("down", false);
-            }
-        }
+//            }
+//            else if (!isGrounded)
+//            {
+//                anim.SetBool("up", rb.linearVelocity.y > 0.1f);
+//                anim.SetBool("down", rb.linearVelocity.y < -0.1f);
+//            }
+//            else
+//            {
+//                anim.SetBool("up", false);
+//                anim.SetBool("down", false);
+//            }
+//        }
 
         private IEnumerator Dash()
         {
