@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Owl Attack 4_0: -5198148142014519966
+      Owl Attack 4_1: 6895110300668648844
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

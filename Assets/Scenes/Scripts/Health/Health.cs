@@ -17,14 +17,14 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth - damage, 0 , maxHealth);
+        currentHealth -= damage;
         if (currentHealth > 0)
         {
             //player hurt
             anim.SetTrigger("hurt");
             StartCoroutine(HurtDelay());
         }
-        else
+        else if (currentHealth == 0)
         {
             //dead
             anim.SetTrigger("die");
@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
             StartCoroutine(RespawnAfterDelay()); 
             //FindObjectOfType<PlayerRespawn>().Respawn();
         }
+        Mathf.Clamp(currentHealth, 0 , maxHealth);
     }
 
     private void Update()
