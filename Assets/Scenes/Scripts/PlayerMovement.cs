@@ -33,6 +33,15 @@ namespace Scenes.Scripts
         [SerializeField] private float meleeCooldown = 0.5f;
         [SerializeField] private LayerMask enemyLayer;
         private bool canMeleeAttack = true;
+        
+        [Header("Audio")]
+        [SerializeField] private AudioClip meleeSound;
+        [SerializeField] private AudioClip jumpSound;
+        [SerializeField] private AudioClip hurtSound;
+        // [SerializeField] private AudioClip landSound;
+        [SerializeField] private AudioClip dashSound;
+        
+        private AudioSource audioSource;
 
         private Rigidbody2D rb;
         private Animator anim;
@@ -46,6 +55,7 @@ namespace Scenes.Scripts
         {
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -84,6 +94,8 @@ namespace Scenes.Scripts
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 anim.SetTrigger("jump");
+                if (jumpSound != null)
+                    audioSource.PlayOneShot(jumpSound);
                 isGrounded = false;
                 coyoteCounter = 0;
                 if (!isGrounded) jumpCounter--;
@@ -118,6 +130,8 @@ namespace Scenes.Scripts
         {
             //anim.SetBool("dash", true);
             anim.SetTrigger("dash");
+            if (dashSound != null)
+                audioSource.PlayOneShot(dashSound);
             canDash = false;
             isDashing = true;
             float originalGravity = rb.gravityScale;
@@ -150,7 +164,9 @@ namespace Scenes.Scripts
         {
             canMeleeAttack = false;
             anim.SetTrigger("attack");
-            //print("bigflop et oli");
+            if (meleeSound != null)
+                audioSource.PlayOneShot(meleeSound);
+
 
             // Determine box center based on facing
             Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
