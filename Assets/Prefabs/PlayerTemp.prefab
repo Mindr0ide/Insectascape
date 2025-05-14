@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 8889498175204325163}
   - component: {fileID: 1271459159501429301}
   - component: {fileID: 7438066958634249122}
+  - component: {fileID: 5766541147667684924}
   m_Layer: 0
   m_Name: PlayerTemp
   m_TagString: Player
@@ -360,3 +361,16 @@ MonoBehaviour:
   currentCheckpoint: {fileID: 0}
   playerHealth: {fileID: 0}
   initialSpawnPoint: {x: 0, y: 0}
+--- !u!114 &5766541147667684924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961287350072108655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5218e2fd5e1fe4a86289886d88f38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
