@@ -308,27 +308,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3397987a188e6c448cda87f4fbcf0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  jumpForce: 7.5
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
-  coyoteTime: 0.2
-  dashForce: 36
+  moveSpeed: 7.5
+  jumpForce: 20
+  fallMultiplier: 5
+  lowJumpMultiplier: 5
+  coyoteTime: 1.5
+  dashForce: 25
   dashDuration: 0.3
-  dashCooldown: 1.5
+  dashCooldown: 2
   extraJumps: 1
   meleeRange: 1
-  meleeBoxSize: {x: 2, y: 2}
+  meleeBoxSize: {x: 2, y: 3}
   meleeOffset: {x: 2, y: 0}
   meleeDamage: 1
   meleeCooldown: 0.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  meleeSound: {fileID: 8300000, guid: ad8cf4d92677909469c5c8a0adb574ac, type: 3}
-  jumpSound: {fileID: 0}
-  hurtSound: {fileID: 0}
-  dashSound: {fileID: 0}
+  meleeSound: {fileID: 8300000, guid: 6b0336b6ca48b1d47bc9ad4f52e0b52a, type: 3}
+  jumpSound: {fileID: 8300000, guid: c216a25c422bcfe4ab88c57947f74067, type: 3}
+  hurtSound: {fileID: 8300000, guid: 6ed64accae0ff2b42865771aefc91c37, type: 3}
+  dashSound: {fileID: 8300000, guid: c62cd4a288ae057459eb34d294aeba4e, type: 3}
 --- !u!95 &1271459159501429301
 Animator:
   serializedVersion: 7
@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  hurtSound: {fileID: 8300000, guid: 6ed64accae0ff2b42865771aefc91c37, type: 3}
 --- !u!82 &4977337717161341232
 AudioSource:
   m_ObjectHideFlags: 0

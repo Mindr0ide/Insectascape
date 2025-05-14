@@ -6,6 +6,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
+    
+    [Header("Audio")]
+    [SerializeField] private AudioClip hurtSound;
+    private AudioSource audioSource;
     public float currentHealth { get; private set; }
     private Animator anim;
 
@@ -13,6 +17,8 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(float damage)
@@ -22,6 +28,9 @@ public class Health : MonoBehaviour
         {
             //player hurt
             anim.SetTrigger("hurt");
+            if (audioSource != null)
+                audioSource.PlayOneShot(hurtSound);
+                
             StartCoroutine(HurtDelay());
         }
         else if (currentHealth == 0)

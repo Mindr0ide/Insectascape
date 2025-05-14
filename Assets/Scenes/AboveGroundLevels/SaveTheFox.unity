@@ -2068,7 +2068,7 @@ PrefabInstance:
     - target: {fileID: 5246695040290228373, guid: 82552222a50ae4d249ac80e98b4cfb0a, type: 3}
       propertyPath: playerHealth
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1594722891}
     - target: {fileID: 6426429923690267130, guid: 82552222a50ae4d249ac80e98b4cfb0a, type: 3}
       propertyPath: m_Name
       value: Menu+UICanvas
@@ -4773,6 +4773,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
   m_PrefabInstance: {fileID: 1594722888}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1594722891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5766541147667684924, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+  m_PrefabInstance: {fileID: 1594722888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5218e2fd5e1fe4a86289886d88f38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1646296125
 GameObject:
   m_ObjectHideFlags: 0

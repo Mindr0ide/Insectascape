@@ -40,7 +40,6 @@ namespace Scenes.Scripts
         [SerializeField] private AudioClip hurtSound;
         // [SerializeField] private AudioClip landSound;
         [SerializeField] private AudioClip dashSound;
-        
         private AudioSource audioSource;
 
         private Rigidbody2D rb;
