@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         Debug.Log("Starting game...");
-        SceneManager.LoadScene("AfterBridge");
+        SceneManager.LoadScene("IntroScene");
     }
 
     //for open settings, see PauseMenu script
