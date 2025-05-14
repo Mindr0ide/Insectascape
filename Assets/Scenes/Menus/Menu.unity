@@ -893,7 +893,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Made by SparkyKinetic, Mindroide, MelDidntListen, '
+  m_text: Made by SparkyKinetic, Mindroide, MelDidntListen, Corinne Harris, & Rozenberg
+    Edgar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7dfe8b575b4c141fea669ffc99e36c9c, type: 2}
   m_sharedMaterial: {fileID: 4957267510075331878, guid: 7dfe8b575b4c141fea669ffc99e36c9c, type: 2}
@@ -920,8 +921,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
