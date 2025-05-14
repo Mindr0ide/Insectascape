@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5907744}
   - component: {fileID: 5907745}
+  - component: {fileID: 5907746}
   m_Layer: 5
   m_Name: Shots
   m_TagString: Untagged
@@ -186,6 +187,18 @@ PlayableDirector:
     value: {fileID: 459316437}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &5907746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ac52aa6b0f54b978d3d98a00a0ea15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &25482182
 GameObject:
   m_ObjectHideFlags: 0

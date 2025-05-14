@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject settingsMenuUI;
     public Slider musicVol, SFXVol;
     public AudioMixer mainAudioMixer;
+    [SerializeField] private Health playerHealth;
 
     void Update()
     {
@@ -75,5 +76,10 @@ public class PauseMenu : MonoBehaviour
     public void SetSFXVolume (float volume)
     {
         mainAudioMixer.SetFloat("SFXVol", SFXVol.value);
+    }
+
+    public void resetPlayer()
+    {
+        playerHealth.TakeDamage(5);
     }
 }

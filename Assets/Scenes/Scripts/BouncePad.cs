@@ -4,7 +4,7 @@ using UnityEngine;
 public class BouncePad : MonoBehaviour
 {
     public float bounce = 15f;
-    private bool isBouncing = false;
+    public bool isBouncing = false;
     private Animator anim;
 
     private void Awake()
