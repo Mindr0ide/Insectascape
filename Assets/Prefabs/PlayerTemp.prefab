@@ -317,8 +317,8 @@ MonoBehaviour:
   dashCooldown: 1.5
   extraJumps: 1
   meleeRange: 1
-  meleeBoxSize: {x: 1, y: 1}
-  meleeOffset: {x: 1, y: 0}
+  meleeBoxSize: {x: 2, y: 2}
+  meleeOffset: {x: 2, y: 0}
   meleeDamage: 1
   meleeCooldown: 0.5
   enemyLayer:
