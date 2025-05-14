@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mole_Pop_up-10_0: -7934452503971861421
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hawk_Animate-7_0: 8886706659421561016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

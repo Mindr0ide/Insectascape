@@ -30,6 +30,12 @@ public class MobBehavior : MonoBehaviour
     public float maxHealth = 2f;
     private float currentHealth;
 
+    [Header("Audio")]
+    public AudioClip attackClip;
+    public AudioClip hurtClip;
+    public AudioClip dieClip;
+    private AudioSource audioSource;
+
     private Rigidbody2D rb;
     private CapsuleCollider2D capsule;
     private SpriteRenderer spriteRenderer;
@@ -45,14 +51,15 @@ public class MobBehavior : MonoBehaviour
         capsule = GetComponent<CapsuleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        PickNewDirection();
+        audioSource = GetComponent<AudioSource>();
 
+        PickNewDirection();
         currentHealth = maxHealth;
     }
 
     void FixedUpdate()
     {
-        if (isDead) return; // Ne plus bouger si mort
+        if (isDead) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         Vector2 moveDirection;
@@ -60,35 +67,22 @@ public class MobBehavior : MonoBehaviour
         if (distanceToPlayer <= detectionRadius)
         {
             float horizontalDistance = player.position.x - transform.position.x;
-            if (Mathf.Abs(horizontalDistance) > 0.2f)
-            {
-                moveDirection = new Vector2(horizontalDistance, 0f).normalized;
-            }
-            else
-            {
-                moveDirection = Vector2.zero;
-            }
+            moveDirection = Mathf.Abs(horizontalDistance) > 0.2f ? new Vector2(horizontalDistance, 0f).normalized : Vector2.zero;
         }
         else
         {
             directionTimer -= Time.fixedDeltaTime;
             if (directionTimer <= 0f)
-            {
                 PickNewDirection();
-            }
 
             if (IsFacingWall() || IsFacingEdge())
-            {
                 randomDirection.x *= -1f;
-            }
 
             moveDirection = randomDirection;
         }
 
         if (moveDirection.x != 0f && spriteRenderer != null)
-        {
             spriteRenderer.flipX = moveDirection.x > 0f;
-        }
 
         if (animator != null)
         {
@@ -98,7 +92,6 @@ public class MobBehavior : MonoBehaviour
         }
 
         Vector2 nextPosition = rb.position + new Vector2(moveDirection.x, 0f) * moveSpeed * Time.fixedDeltaTime;
-
         RaycastHit2D hit = Physics2D.Raycast(nextPosition, Vector2.down, groundCheckDistance, groundLayer);
         if (hit.collider != null)
         {
@@ -134,7 +127,7 @@ public class MobBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isDead) return; // Ne plus rien faire si mort
+        if (isDead) return;
 
         if (collision.transform.CompareTag("Player"))
         {
@@ -152,17 +145,24 @@ public class MobBehavior : MonoBehaviour
                     playerRb.AddForce(Vector2.up * knockbackForce, ForceMode2D.Impulse);
                 }
 
+                // 🔊 Son d'attaque
+                if (attackClip != null)
+                    audioSource.PlayOneShot(attackClip);
+
                 lastAttackTime = Time.time;
             }
         }
     }
 
-    // ✅ Nouvelle fonction pour prendre des dégâts
     public void TakeDamage(float amount)
     {
         if (isDead) return;
 
         currentHealth = Mathf.Clamp(currentHealth - amount, 0f, maxHealth);
+
+        // 🔊 Son de blessure
+        if (hurtClip != null)
+            audioSource.PlayOneShot(hurtClip);
 
         if (currentHealth > 0f)
         {
@@ -174,17 +174,18 @@ public class MobBehavior : MonoBehaviour
         }
     }
 
-    // ✅ Fonction de mort
     void Die()
     {
         isDead = true;
         animator.SetTrigger("die");
 
-        // Désactiver le collider et le mouvement
+        // 🔊 Son de mort
+        if (dieClip != null)
+            audioSource.PlayOneShot(dieClip);
+
         rb.linearVelocity = Vector2.zero;
         capsule.enabled = false;
 
-        // Détruire l'objet après 1.5 secondes (temps de l'animation)
         Destroy(gameObject, 1.5f);
     }
 }
