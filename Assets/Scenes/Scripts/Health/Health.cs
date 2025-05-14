@@ -37,6 +37,8 @@ public class Health : MonoBehaviour
         {
             //dead
             anim.SetTrigger("die");
+            if (audioSource != null)
+                audioSource.PlayOneShot(hurtSound);
             // CALL Respawn here
             StartCoroutine(RespawnAfterDelay()); 
             //FindObjectOfType<PlayerRespawn>().Respawn();
