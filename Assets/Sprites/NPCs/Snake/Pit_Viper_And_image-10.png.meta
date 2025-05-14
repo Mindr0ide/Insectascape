@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pit_Viper_And_image-10_0: -6026606083272029602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

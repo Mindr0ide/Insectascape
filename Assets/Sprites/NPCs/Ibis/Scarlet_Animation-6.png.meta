@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scarlet_Animation-6_0: 7084449260634282823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
