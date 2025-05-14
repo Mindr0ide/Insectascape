@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Scenes.Scripts;
 
 public class DemoEndGame : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class DemoEndGame : MonoBehaviour
     private BoxCollider2D boxCollider2D; // Use consistent casing
     public GameObject text;
 
+
+
+// freeze player does not work now i dont have time to fix
     void Awake()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -22,7 +26,7 @@ public class DemoEndGame : MonoBehaviour
 
     private System.Collections.IEnumerator EndSequence()
     {
-        freeze();
+        //Freeze();
         moleAnim.Play("MolePoppup 0");
         yield return new WaitForSeconds(1);
         text.SetActive(true);
@@ -30,31 +34,31 @@ public class DemoEndGame : MonoBehaviour
         EndGame();
     }
 
-    private void freeze()
-    {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            var movement = player.GetComponent<PlayerMovement>();
-            if (movement != null)
-                movement.Freeze();
-        }
-    }
+    // private void freeze()
+    // {
+    //     var player = GameObject.FindGameObjectWithTag("Player");
+    //     if (player != null)
+    //     {
+    //         var movement = player.GetComponent<PlayerMovement>();
+    //         if (movement != null)
+    //             movement = false();
+    //     }
+    // }
 
-    public void Freeze()
-    {
-        // Disable movement logic here
-        enabled = false;
-    }
+    // public void Freeze()
+    // {
+    //     // Disable movement logic here
+        
+    // }
 
-    public void Unfreeze()
-    {
-        enabled = true;
-    }
+    // public void Unfreeze()
+    // {
+    //     enabled = true;
+    // }
 
     private void EndGame()
     {
-        unfreeze();
+        //Unfreeze();
         SceneManager.LoadScene("Menu");
     }
 }
