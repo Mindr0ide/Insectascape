@@ -734,6 +734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7461b1f9818354abbb9ee5dd590b885b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleAnim: {fileID: 477039014}
+  text: {fileID: 1596068511}
 --- !u!61 &408353298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -764,7 +766,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1749,7 +1751,7 @@ Transform:
   m_GameObject: {fileID: 477039013}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 184, y: 55, z: 0}
+  m_LocalPosition: {x: 184, y: 53.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2062,7 +2064,7 @@ PrefabInstance:
     - target: {fileID: 5246695040290228373, guid: 82552222a50ae4d249ac80e98b4cfb0a, type: 3}
       propertyPath: playerHealth
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1682611746}
     - target: {fileID: 6426429923690267130, guid: 82552222a50ae4d249ac80e98b4cfb0a, type: 3}
       propertyPath: m_Name
       value: Menu+UICanvas
@@ -3363,7 +3365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1104931072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4994,11 +4996,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.1
+      value: 54.5
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5576,6 +5578,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682611746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5766541147667684924, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
+  m_PrefabInstance: {fileID: 1594722888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5218e2fd5e1fe4a86289886d88f38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1684886072
 GameObject:
   m_ObjectHideFlags: 0
