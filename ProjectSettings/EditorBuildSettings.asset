@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AboveGroundLevels/SaveTheFox.unity
     guid: 67fd5961e7b184e91869f0aa794191d5
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 235d35971d621488180aa54876963031
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

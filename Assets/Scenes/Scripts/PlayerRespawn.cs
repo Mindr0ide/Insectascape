@@ -25,6 +25,6 @@ public class PlayerRespawn : MonoBehaviour
     {
         playerHealth.Respawn(); //Restore player health and reset animation
         transform.position = currentCheckpoint != null ? currentCheckpoint.position : initialSpawnPoint;
-        transform.position = currentCheckpoint.position;
+        //transform.position = currentCheckpoint.position;
     }
 }

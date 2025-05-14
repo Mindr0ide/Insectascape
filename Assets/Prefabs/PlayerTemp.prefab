@@ -152,8 +152,7 @@ GameObject:
   - component: {fileID: 8889498175204325163}
   - component: {fileID: 1271459159501429301}
   - component: {fileID: 7438066958634249122}
-  - component: {fileID: 4530211155679269311}
-  - component: {fileID: 3731974378668408119}
+  - component: {fileID: 5766541147667684924}
   m_Layer: 0
   m_Name: PlayerTemp
   m_TagString: Player
@@ -221,7 +220,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 20daa800a641d9e4cae18a06630db1ef, type: 3}
+  m_Sprite: {fileID: 5273520009521293803, guid: 14c02a8757aeb324e91801f703fdbe35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -308,15 +307,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3397987a188e6c448cda87f4fbcf0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7.5
-  jumpForce: 20
-  fallMultiplier: 5
-  lowJumpMultiplier: 5
-  coyoteTime: 1.5
-  dashForce: 25
+  moveSpeed: 8
+  jumpForce: 7.5
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  coyoteTime: 0.2
+  dashForce: 36
   dashDuration: 0.3
   dashCooldown: 1.5
-  extraJumps: 2
+  extraJumps: 1
+  meleeRange: 1
+  meleeBoxSize: {x: 2, y: 2}
+  meleeOffset: {x: 2, y: 0}
+  meleeDamage: 1
+  meleeCooldown: 0.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &1271459159501429301
 Animator:
   serializedVersion: 7
@@ -354,7 +361,7 @@ MonoBehaviour:
   currentCheckpoint: {fileID: 0}
   playerHealth: {fileID: 0}
   initialSpawnPoint: {x: 0, y: 0}
---- !u!114 &4530211155679269311
+--- !u!114 &5766541147667684924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -367,16 +374,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
---- !u!114 &3731974378668408119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961287350072108655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b37f9d87904c14e43a2c1e89d1a72abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCollider: {fileID: 0}

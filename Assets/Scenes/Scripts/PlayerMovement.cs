@@ -50,7 +50,7 @@ namespace Scenes.Scripts
 
         private void Update()
         {
-            print(isDashing);
+            //print(isDashing);
             if (isDashing) return;
             moveInput = (canMove) ? Input.GetAxis("Horizontal") : 0f;
 
@@ -63,7 +63,7 @@ namespace Scenes.Scripts
             HandleDash();
             HandleAttack();
             HandleGravity();
-            HandleAnim();
+            //HandleAnim();
 
             anim.SetBool("run", moveInput != 0);
             anim.SetBool("grounded", isGrounded);
@@ -80,10 +80,10 @@ namespace Scenes.Scripts
             }
             else coyoteCounter -= Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0))
+            if (Input.GetKeyDown(KeyCode.Space) && (coyoteCounter > 0f || jumpCounter > 0) && canMove)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-                // anim.SetTrigger("jump");
+                anim.SetTrigger("jump");
                 isGrounded = false;
                 coyoteCounter = 0;
                 if (!isGrounded) jumpCounter--;
@@ -92,23 +92,27 @@ namespace Scenes.Scripts
 
         private void HandleDash()
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && canMove)
                 StartCoroutine(Dash());
         }
 
-        private void HandleAnim()
-        {
-            if (!isGrounded)
-            {
-                anim.SetBool("up", rb.linearVelocity.y > 0.1f);
-                anim.SetBool("down", rb.linearVelocity.y < -0.1f);
-            }
-            else
-            {
-                anim.SetBool("up", false);
-                anim.SetBool("down", false);
-            }
-        }
+//        private void HandleAnim()
+//        {
+//            if (anim.GetBool("hurt"))
+//            {
+                //anim.SetTrigger("hurt");
+//            }
+//            else if (!isGrounded)
+//            {
+//                anim.SetBool("up", rb.linearVelocity.y > 0.1f);
+//                anim.SetBool("down", rb.linearVelocity.y < -0.1f);
+//            }
+//            else
+//            {
+//                anim.SetBool("up", false);
+//                anim.SetBool("down", false);
+//            }
+//        }
 
         private IEnumerator Dash()
         {
@@ -130,7 +134,7 @@ namespace Scenes.Scripts
 
         private void HandleGravity()
         {
-            if (rb.linearVelocity.y < 0)
+            if (rb.linearVelocity.y <= 0)
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
             else if (rb.linearVelocity.y > 0)
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
@@ -138,7 +142,7 @@ namespace Scenes.Scripts
 
         private void HandleAttack()
         {
-            if (Input.GetMouseButtonDown(0) && canMeleeAttack)
+            if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) && canMeleeAttack)
                 MeleeAttack();
         }
 
