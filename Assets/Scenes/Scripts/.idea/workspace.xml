@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e75699b8-357c-4aa1-b55d-a2703a7be07c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Prefabs/Mob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Prefabs/Mob.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MobBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MobBehavior.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e75699b8-357c-4aa1-b55d-a2703a7be07c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +59,7 @@
       <workItem from="1745272097873" duration="3804000" />
       <workItem from="1745876251162" duration="1794000" />
       <workItem from="1746047221194" duration="1309000" />
-      <workItem from="1747253058224" duration="388000" />
+      <workItem from="1747253058224" duration="984000" />
     </task>
     <servers />
   </component>
