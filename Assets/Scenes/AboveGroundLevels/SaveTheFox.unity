@@ -4432,6 +4432,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   maxHealth: 2
+  attackClip: {fileID: 0}
+  hurtClip: {fileID: 0}
+  dieClip: {fileID: 0}
 --- !u!50 &1372382091
 Rigidbody2D:
   serializedVersion: 5
@@ -4996,11 +4999,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 208
+      value: -39.7
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 54.5
+      value: 41.2
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5308,6 +5311,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   maxHealth: 2
+  attackClip: {fileID: 0}
+  hurtClip: {fileID: 0}
+  dieClip: {fileID: 0}
 --- !u!50 &1646296130
 Rigidbody2D:
   serializedVersion: 5
@@ -5714,6 +5720,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   maxHealth: 2
+  attackClip: {fileID: 0}
+  hurtClip: {fileID: 0}
+  dieClip: {fileID: 0}
 --- !u!50 &1684886077
 Rigidbody2D:
   serializedVersion: 5
@@ -7123,6 +7132,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   maxHealth: 2
+  attackClip: {fileID: 0}
+  hurtClip: {fileID: 0}
+  dieClip: {fileID: 0}
 --- !u!50 &1851664709
 Rigidbody2D:
   serializedVersion: 5
@@ -8376,6 +8388,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   maxHealth: 2
+  attackClip: {fileID: 0}
+  hurtClip: {fileID: 0}
+  dieClip: {fileID: 0}
 --- !u!50 &2099993877
 Rigidbody2D:
   serializedVersion: 5
