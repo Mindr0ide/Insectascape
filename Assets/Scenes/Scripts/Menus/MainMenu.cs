@@ -6,14 +6,10 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         Debug.Log("Starting game...");
-        SceneManager.LoadScene("AfterBridge");
+        SceneManager.LoadScene("IntroScene");
     }
 
-    public void OpenSettings()
-    {
-        Debug.Log("Opening settings...");
-        //TODO settings
-    }
+    //for open settings, see PauseMenu script
 
     public void QuitGame()
     {
