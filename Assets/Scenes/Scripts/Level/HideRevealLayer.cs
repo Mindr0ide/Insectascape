@@ -4,6 +4,7 @@ public class HideRevealLayer : MonoBehaviour
 {
     public GameObject layerToRelease;
     private PolygonCollider2D polygonCollider2D;
+    public Animator layerAnim;
 
     private void Awake()
     {
@@ -15,14 +16,16 @@ public class HideRevealLayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            layerToRelease.SetActive(false);
+            layerAnim.Play("FadeOut");
+            //layerToRelease.SetActive(false);
         }
     } 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            layerToRelease.SetActive(true);
+            layerAnim.Play("FadeIn");
+            //layerToRelease.SetActive(true);
         }
     } 
 }
