@@ -201,6 +201,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2044845158}
     - target: {fileID: 345997857405253009, guid: d329501d9a035d54d8a2e78586f98109, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 345997857405253009, guid: d329501d9a035d54d8a2e78586f98109, type: 3}
       propertyPath: wallLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
@@ -4066,7 +4070,7 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 512
-  maxHealth: 2
+  maxHealth: 1
   attackClip: {fileID: 0}
   hurtClip: {fileID: 0}
   dieClip: {fileID: 0}
@@ -7114,7 +7118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1946324191544925497, guid: 155bc12b7a4f0479ba54dfe292f05959, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45.3
+      value: 46.3
       objectReference: {fileID: 0}
     - target: {fileID: 1946324191544925497, guid: 155bc12b7a4f0479ba54dfe292f05959, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8662,7 +8666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3658923967397986786, guid: e3453ce7f63d14aa7b3a0f1aa83495e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8866,7 +8870,7 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 512
-  maxHealth: 2
+  maxHealth: 1
   attackClip: {fileID: 0}
   hurtClip: {fileID: 0}
   dieClip: {fileID: 0}
